@@ -11,15 +11,21 @@
     "jest": "^20.0.4",
     "remark": "^8.0.0",
     "remark-lint": "^5.2.0",
+    "rimraf": "^2.6.1",
     "unified-lint-rule": "^1.0.1",
     "unist-util-find": "^1.0.1",
     "unist-util-find-after": "^2.0.1",
     "unist-util-is": "^2.1.1",
     "unist-util-visit": "^1.1.1"
   },
+	"files": [
+    "lib"
+	],
   "scripts": {
     "start": "remark .",
-    "build": "babel src -d lib"
+    "build": "babel src -d lib",
+    "clean": "rimraf lib",
+		"prepare": "npm run clean && npm run build"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
