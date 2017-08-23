@@ -9,7 +9,7 @@ async function topicHasOverview (ast, file) {
 
   const topicOrOverview = async (subNode) => {
     if (overviewFound || topicFound) return
-    if (subNode.depth === 2 && subNode !== node) topicFound = true
+    if (subNode.depth === 2 && subNode.children[0].value.includes('Overview')) topicFound = true
     if (subNode.depth === 3){
       for(let child of subNode.children){
         if(child.value.match(/^Overview/)) overviewFound = true
